@@ -15,7 +15,7 @@ try:
     print("#" * 20)
 
     try:
-        # cursor = connection.cursor()
+        cursor = connection.cursor()
         # Создание таблицы
         # create table
         # with connection.cursor() as cursor:
@@ -27,10 +27,10 @@ try:
         #     print("Table created successfully")
 
         # insert data
-        # with connection.cursor() as cursor:
-        #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Anna', 'qwerty', 'anna@gmail.com');"
-        #     cursor.execute(insert_query)
-        #     connection.commit()
+        with connection.cursor() as cursor:
+            insert_query = "INSERT INTO `worker` (id, name, surname,last_name,phone_number, email, role_id) VALUES ('2','Oleg','Gorshunov','aleks','666','o@gmail.com','1')"
+            cursor.execute(insert_query)
+            connection.commit()
 
         # with connection.cursor() as cursor:
         #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Victor', '123456', 'victor@gmail.com');"
@@ -71,7 +71,7 @@ try:
 
         # select all data from table
         with connection.cursor() as cursor:
-            select_all_rows = "SELECT * FROM `users`"
+            select_all_rows = "SELECT * FROM `worker`"
             cursor.execute(select_all_rows)
             # cursor.execute("SELECT * FROM `users`")
             rows = cursor.fetchall()
