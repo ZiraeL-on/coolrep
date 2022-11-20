@@ -28,30 +28,10 @@ try:
 
         # insert data
         with connection.cursor() as cursor:
-            insert_query = "INSERT INTO `worker` (id, name, surname,last_name,phone_number, email, role_id) VALUES ('2','Oleg','Gorshunov','aleks','666','o@gmail.com','1')"
-            cursor.execute(insert_query)
-            connection.commit()
-
-        # with connection.cursor() as cursor:
-        #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Victor', '123456', 'victor@gmail.com');"
-        #     cursor.execute(insert_query)
-        #     connection.commit()
+                insert_query = "INSERT INTO `worker` (name, surname,last_name,phone_number, email, role_id) VALUES ('Oleg','Gorshunov','aleks','666','o@gmail.com','1')"
+                cursor.execute(insert_query)
+                connection.commit()
         #
-        # with connection.cursor() as cursor:
-        #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', '112233', 'olegan@mail.ru');"
-        #     cursor.execute(insert_query)
-        #     connection.commit()
-
-        # with connection.cursor() as cursor:
-        #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', 'kjlsdhfjsd', 'ole2gan@mail.ru');"
-        #     cursor.execute(insert_query)
-        #     connection.commit()
-        #
-        # with connection.cursor() as cursor:
-        #     insert_query = "INSERT INTO `users` (name, password, email) VALUES ('Oleg', '889922', 'olegan3@mail.ru');"
-        #     cursor.execute(insert_query)
-        #     connection.commit()
-
         # update data
         # with connection.cursor() as cursor:
         #     update_query = "UPDATE `users` SET password = 'xxxXXX' WHERE name = 'Oleg';"
@@ -73,7 +53,6 @@ try:
         with connection.cursor() as cursor:
             select_all_rows = "SELECT * FROM `worker`"
             cursor.execute(select_all_rows)
-            # cursor.execute("SELECT * FROM `users`")
             rows = cursor.fetchall()
             for row in rows:
                 print(row)
